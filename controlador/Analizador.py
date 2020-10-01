@@ -18,14 +18,14 @@ class Analizador():
 
     #guarda la informacion del archivo en la variable entrada
     def metodo_while(self,texto):
-        print("Entro al metod while")
+        
         self.entrada = ''
         self.caracter_Actual = ''
         self.lexema = ''
         for linea in texto:
             print(linea)
             self.entrada += linea
-        self.entrada = self.entrada + '$'
+        
 
         x = 0
         while x < len(self.entrada):
@@ -39,14 +39,18 @@ class Analizador():
                 x = x + size_lexema                              # x = > TOMA EL VALOR DE x + size_lexema, para continuar despues de >
                 self._fila += 1
 
-            elif self.caracter_Actual.isalpha or self.caracter_Actual.isnumeric:
+            elif self.caracter_Actual.isalpha() or self.caracter_Actual.isnumeric():
                 pass
-                #print(f"CARACTER ACTUAL: {self.caracter_Actual}")
-            elif self.caracter_Actual == '#':
+            elif self.caracter_Actual == '#' or self.caracter_Actual=="." or self.caracter_Actual==' ':
                 pass
-            elif self.caracter_Actual == '\n':
+            elif self.caracter_Actual == '\n' or self.caracter_Actual=='_':
                 pass
-                #self._fila += 1
+            else:
+                print(f"Caracter Actual: {self.caracter_Actual} Fila: {self.get_fila(x)} Columna: {self.get_columna(x)}")
+                if(self.guardar_error(self.get_fila(x),self.get_columna(x),self.entrada[x])==False):
+                                self._contador += 1
+                                almacenar = Error(self._contador,self.get_fila(x),self.get_columna(x),self.entrada[x])
+                                self.lista_error.append(almacenar)
             
             
             x += 1
