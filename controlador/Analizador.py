@@ -3,7 +3,7 @@ from modelo.Token import Token
 from controlador.Excel import Excel
 
 class Analizador():
-
+    
     lista_error = list()
     lista_token = list()
     _contador = 0
@@ -14,6 +14,11 @@ class Analizador():
     def __init__(self):
         self._fila  = 1 
         self._columna = 1
+        self.lista_error = list()
+        self.lista_token = list()
+        self._contador = 0
+        self._contador2 = 1
+        self.enviar_datos_ = Excel()
 
 
     #guarda la informacion del archivo en la variable entrada

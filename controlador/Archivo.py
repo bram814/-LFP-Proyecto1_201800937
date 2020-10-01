@@ -1,13 +1,16 @@
 from tkinter import filedialog
 from controlador.Analizador import Analizador
+from controlador.AnalizadorB import AnalizadorB
 from io import open
 
 class Archivo():
 
     analizador_ = Analizador()
+    analizador_html = AnalizadorB()
 
     def __init__(self):
-        pass
+        self.analizador_ = Analizador()
+        self.analizador_html = AnalizadorB()
 
     def open_File(self):
             try:
@@ -34,6 +37,7 @@ class Archivo():
             archivo.close()
             print(f"Texto:{texto}")
             self.analizador_.metodo_while(texto)
+            self.analizador_html.metodo_analizador_b(texto)
 
             
         except (FileNotFoundError):
