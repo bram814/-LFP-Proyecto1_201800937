@@ -8,7 +8,7 @@ class Menu():
 
 
 
-    def menu_Principal(self,almacenado):
+    def menu_Principal(self,lista_ruta,lista_estacion):
 
 
         while True:
@@ -24,8 +24,6 @@ class Menu():
                 numero = int(input("Ingrese un Numero: "))
 
                 if (numero==1):
-                    #cargar = Archivo()
-                    #almacenado = cargar.cargarArchivo(almacenado)
                     self._archivo.open_File()
 
                     #break
@@ -38,12 +36,11 @@ class Menu():
                 elif(numero<=0 or numero>=5):
                     print("Ingreso un numero menor a 0 o mayor a 4. Debe ser de [1,4]")
                     break
-                
             except:
                 print("Ingreso una letra. Debe ser de [1,4]")
                 #llamar = Menu()
                 #llamar.menuPrincipal(almacenado)
-                self.menu_Principal(almacenado)
+                self.menu_Principal(lista_ruta,lista_estacion)
 
 
     
