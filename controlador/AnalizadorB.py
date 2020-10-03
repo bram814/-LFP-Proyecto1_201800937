@@ -121,7 +121,21 @@ class AnalizadorB():
                                                                                     print('encontro fin')
                                                                                     x = x + size_                               # Esta >
                                                                                     size_ = self.obtener_longitud_inicial(x)    # Encuentra <
-                                                                                    x = x + size_
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print('encontro /ruta')
+                                                                                        #    x = x + size_                               # Esta en >
+                                                                                         #   size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                          #  x = x + size_-1                               # Esta en <
+                                                                                            
+
+                                                                                        #else:
+                                                                                            
+                                                                                         #   x = x + size_
 
                                                                                 else:
                                                                                     x = x + size_
@@ -129,11 +143,6 @@ class AnalizadorB():
 
                                                                         else:
                                                                             x = x + size_
-
-
-
-
-                                                                    
 
                                                                 else:
                                                                     x = x + size_
@@ -151,10 +160,334 @@ class AnalizadorB():
                      
 
                                    #BUSCANDO <estacion>
-                
-                
-                x = x + size_-1                                              # size_ + x ==== esta en la posicion >       
+                elif(self.buscar_estacion(x+1,x+size_)==True):
+                    print('ESTACION')
+                    x = x + size_                                                                           # Esta en la posicion >                               
+                    size_ = self.obtener_longitud_inicial(x)                                                # Encuentra <  
+                    x = x + size_                                                                           # Esta en la posicion <
+                    if (self.entrada[x]=='<'):
+                        size_ = self.obtener_longitud_final(x)                                              # Encuentra >
+                        if (self.buscar_estado(x+1,x+size_)==True):
+                            print('ESTADO')
+                            x = x + size_                                                                   # Esta >
+                            # METODO PARA MOSTRAR ESTADO
+                            size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
+                            x = x + size_                                                                   # Esta <
+
+                            if (self.entrada[x]=='<'):
+                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                if(self.buscar_estado(x+1,x+size_)==True):
+                                    print('estado')
+                                    x = x + size_                                                            # Esta en >
+                                    size_ = self.obtener_longitud_inicial(x)                                 # Encuentra <
+                                    x = x + size_                                                            # Esta en <
+
+                                    if(self.entrada[x]=='<'):
+                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+                                                                                                 
+                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                            print('NOMBRE')
+                                            x = x + size_                                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                            print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                                   # Esta en la posicion <
+
+                                            if (self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                                if (self.buscar_nombre(x+1,size_+x)==True):
+                                                    print('NOMBRE')
+                                                    x = x + size_                                                           # Esta >
+                                                    size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                                    x = x + size_                                                           # Esta <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+                                                        if(self.buscar_color(x+1,x+size_)==True):
+                                                            print('COLOR')
+                                                            x = x + size_                                                   # >
+                                                            size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
+                                                            # METODO PARA OBTENER EL COLOR          
+                                                            x = x + size_                                                   # <
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                                if(self.buscar_color(x+1,x+size_)==True):
+                                                                    print('COLOR')
+                                                                    x = x + size_
+                                                                    size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                                                    x = x + size_ 
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_
+                                                else:
+                                                    x = x + size_
+                                        elif(self.buscar_color(x+1,x+size_)==True):
+                                            print('COLOR')
+                                            x = x + size_                                   # >
+                                            size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
+                                            # METODO PARA ALMACENAR COLOR
+                                            x = x + size_                                   # <
+
+                                            if (self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                if(self.buscar_color(x+1,x+size_)==True):
+                                                    print('COLOR')
+                                                    x = x + size_                               # >
+                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                    x = x + size_                               # <
+
+                                                    if(self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                        if (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('NOMBRE')
+                                                            x = x + size_
+                                                            size_ = self.obtener_longitud_inicial(x)
+                                                            print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.valor_expresion = ''
+                                                            x = x + size_
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)
+
+                                                                if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                    print('NOMBRE')
+                                                                    x = x + size_
+                                                                    size_ = self.obtener_longitud_inicial(x)
+                                                                    x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_
+                                                else:
+                                                    x = x + size_
+
+                                        else:
+                                            x = x + size_ 
+                                else:
+                                    x = x + size_
+##################################################################################3
+                        elif (self.buscar_nombre(x+1,x+size_)==True):
+                            print('NOMBRE')
+                            x = x + size_                                                                   # Esta >
+                            size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
+                            print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
+                            self.valor_expresion = ''
+                            x = x + size_                                                                   # Esta <
+
+                            if (self.entrada[x]=='<'):
+                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                if(self.buscar_nombre(x+1,x+size_)==True):
+                                    print('NOMBRE')
+                                    x = x + size_                                                            # Esta en >
+                                    size_ = self.obtener_longitud_inicial(x)                                 # Encuentra <
+                                    x = x + size_                                                            # Esta en <
+
+                                    if(self.entrada[x]=='<'):
+                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+                                                                                                 
+                                        if(self.buscar_color(x+1,x+size_)==True):
+                                            print('COLOR')
+                                            x = x + size_                                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                            x = x + size_                                                                   # Esta en la posicion <
+
+                                            if (self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                                if (self.buscar_color(x+1,size_+x)==True):
+                                                    print('COLOR')
+                                                    x = x + size_                                                           # Esta >
+                                                    size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                                    x = x + size_                                                           # Esta <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+                                                        if(self.buscar_estado(x+1,x+size_)==True):
+                                                            print('ESTADO')
+                                                            x = x + size_                                                   # >
+                                                            size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
+                                                                      
+                                                            x = x + size_                                                   # <
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                                if(self.buscar_estado(x+1,x+size_)==True):
+                                                                    print('ESTADO')
+                                                                    x = x + size_
+                                                                    size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                                                    x = x + size_                                           # <
+                                                                        
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_
+                                                else:
+                                                    x = x + size_
+                                        elif(self.buscar_estado(x+1,x+size_)==True):
+                                            print('ESTADO')
+                                            x = x + size_                                   # >
+                                            size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
+                                            x = x + size_                                   # <
+
+                                            if (self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                if(self.buscar_estado(x+1,x+size_)==True):
+                                                    print('ESTADO')
+                                                    x = x + size_                               # >
+                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                    x = x + size_                               # <
+
+                                                    if(self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                        if (self.buscar_color(x+1,x+size_)==True):
+                                                            print('COLOR')
+                                                            x = x + size_
+                                                            size_ = self.obtener_longitud_inicial(x)
+                                                            x = x + size_
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)
+
+                                                                if(self.buscar_color(x+1,x+size_)==True):
+                                                                    print('COLOR')
+                                                                    x = x + size_
+                                                                    size_ = self.obtener_longitud_inicial(x)
+                                                                    x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_
+                                                else:
+                                                    x = x + size_
+
+                                        else:
+                                            x = x + size_ 
+                                else:
+                                    x = x + size_
+#########################################
+                        elif (self.buscar_color(x+1,x+size_)==True):
+                            print('COLOR')
+                            x = x + size_                                                                   # Esta >
+                            size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
+                            x = x + size_                                                                   # Esta <
+
+                            if (self.entrada[x]=='<'):
+                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                if(self.buscar_color(x+1,x+size_)==True):
+                                    print('COLOR')
+                                    x = x + size_                                                            # Esta en >
+                                    size_ = self.obtener_longitud_inicial(x)                                 # Encuentra <
+                                    x = x + size_                                                            # Esta en <
+
+                                    if(self.entrada[x]=='<'):
+                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+                                                                                                 
+                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                            print('NOMBRE')
+                                            x = x + size_                                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                            x = x + size_                                                                   # Esta en la posicion <
+
+                                            if (self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                                if (self.buscar_nombre(x+1,size_+x)==True):
+                                                    print('NOMBRE')
+                                                    x = x + size_                                                           # Esta >
+                                                    size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                                    x = x + size_                                                           # Esta <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+                                                        if(self.buscar_estado(x+1,x+size_)==True):
+                                                            print('ESTADO')
+                                                            x = x + size_                                                   # >
+                                                            size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
+                                                            x = x + size_                                                   # <
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                                if(self.buscar_estado(x+1,x+size_)==True):
+                                                                    print('ESTADO')
+                                                                    x = x + size_
+                                                                    size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                                                    x = x + size_                                           # <
+                                                                                                            
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_
+                                                else:
+                                                    x = x + size_
+                                        elif(self.buscar_estado(x+1,x+size_)==True):
+                                            print('ESTADO')
+                                            x = x + size_                                   # >
+                                            size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
+                                            x = x + size_                                   # <
+
+                                            if (self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                if(self.buscar_estado(x+1,x+size_)==True):
+                                                    print('ESTADO')
+                                                    x = x + size_                               # >
+                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                    x = x + size_                               # <
+
+                                                    if(self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                        if (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('NOMBRE')
+                                                            x = x + size_
+                                                            size_ = self.obtener_longitud_inicial(x)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)
+
+                                                                if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                    print('NOMBRE')
+                                                                    x = x + size_
+                                                                    size_ = self.obtener_longitud_inicial(x)
+                                                                    x = x + size_
+                                                                    
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_
+                                                else:
+                                                    x = x + size_
+
+                                        else:
+                                            x = x + size_ 
+                                else:
+                                    x = x + size_
+                        
+#####################################################3                        
+                        else:
+                            x = x + size_
+                else:
+                    x = x + size_                                              # size_ + x ==== esta en la posicion >       
             
+            #print(f'                REVISANDO: {self.entrada[x]} {self.entrada[x-1]} {self.entrada[x+1]}')
             x += 1
 #                                   VERIFICAR PESO DE RUTA
 
@@ -257,6 +590,16 @@ class AnalizadorB():
             actual += 1 
         
         return valor_ruta
+
+    def buscar_ruta_cierre(self,actual,fin):
+        valor_ruta_cierre = False
+        while actual < fin :
+            c = self.entrada[actual]
+            if(c=='/'):
+                valor_ruta_cierre = self.buscar_ruta(actual+1,fin)
+                return valor_ruta_cierre
+            actual += 1    
+        return valor_ruta_cierre
 #                                   VERIFICAR   <nombre>
     def buscar_nombre(self,actual,fin):
         valor_nombre = False
@@ -309,6 +652,41 @@ class AnalizadorB():
                 return valor_fin
             actual += 1
         return valor_fin
+#                                   VERIFICAR <estacion>
+
+    def buscar_estacion(self,actual,fin):
+        valor_estacion = False
+        while actual < fin:
+            c = self.entrada[actual]
+            if((c=='e' or c=='E') and (self.entrada[actual+1]=='s' or self.entrada[actual+1]=='S') and (self.entrada[actual+2]=='t' or self.entrada[actual+2]=='T') and (self.entrada[actual+3]=='a' or self.entrada[actual+3]=='A') \
+                and (self.entrada[actual+4]=='C' or self.entrada[actual+4]=='c') and (self.entrada[actual+5]=='i' or self.entrada[actual+5]=='I') and (self.entrada[actual+6]=='o' or self.entrada[actual+6]=='O')\
+                    and (self.entrada[actual+7]=='n' or self.entrada[actual+7]=='N')):
+                    valor_estacion = True
+                    return valor_estacion
+            actual += 1
+        return valor_estacion
+#                                   VERIFICAR <estado>
+    def buscar_estado(self,actual,fin):
+        valor_estado = False
+        while actual < fin:
+            c = self.entrada[actual]
+            if((c=='e' or c=='e') and (self.entrada[actual+1]=='s' or self.entrada[actual+1]=='S') and (self.entrada[actual+2]=='t' or self.entrada[actual+2]=='T') and (self.entrada[actual+3]=='a' or self.entrada[actual+3]=='A') \
+                and (self.entrada[actual+4]=='d' or self.entrada[actual+4]=='D') and (self.entrada[actual+5]=='o' or self.entrada[actual+5]=='O')):
+                valor_estado = True
+                return valor_estado
+            actual += 1
+        return valor_estado
+#                                   VERIFICAR <color>
+    def buscar_color(self,actual,fin):
+        valor_color = False
+        while actual < fin :
+            c = self.entrada[actual]
+            if((c=='c' or c=='C') and (self.entrada[actual+1]=='o' or self.entrada[actual+1]=='O') and (self.entrada[actual+2]=='l' or self.entrada[actual+2]=='L') and (self.entrada[actual+3]=='o' or self.entrada[actual+3]=='O') \
+                and (self.entrada[actual+4]=='r' or self.entrada[actual+4]=='R')):
+                valor_color = True
+                return valor_color
+            actual += 1
+        return valor_color
 #                           obtiene la cantidad entre < >
     def obtener_longitud_final(self,actual):
         longitud = 0
