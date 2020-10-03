@@ -136,7 +136,7 @@ class AnalizadorB():
                                                                             if(self.entrada[x]=='<'):
                                                                                 size_ = self.obtener_longitud_final(x)      # Encuentra >
 
-                                                                                if(self.buscar_fin(x+1,x+size_)==True):
+                                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
                                                                                     print('     </fin>')
                                                                                     x = x + size_                               # Esta >
                                                                                     size_ = self.obtener_longitud_inicial(x)    # Encuentra <
@@ -176,16 +176,17 @@ class AnalizadorB():
                             x = x + size_
                      
 
+
                                    #BUSCANDO <estacion>
                 elif(self.buscar_estacion(x+1,x+size_)==True):
-                    print('ESTACION')
+                    print('     <estacion>')
                     x = x + size_                                                                           # Esta en la posicion >                               
                     size_ = self.obtener_longitud_inicial(x)                                                # Encuentra <  
                     x = x + size_                                                                           # Esta en la posicion <
                     if (self.entrada[x]=='<'):
                         size_ = self.obtener_longitud_final(x)                                              # Encuentra >
                         if (self.buscar_estado(x+1,x+size_)==True):
-                            print('ESTADO')
+                            print('         <estado>')
                             x = x + size_                                                                   # Esta >
                             # METODO PARA MOSTRAR ESTADO
                             size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
@@ -507,6 +508,23 @@ class AnalizadorB():
             #print(f'                REVISANDO: {self.entrada[x]} {self.entrada[x-1]} {self.entrada[x+1]}')
             x += 1
 
+#                                   VERIFICACION ESTADO
+    def verificacion_ex_estado(self,actual,fin):
+        self.verificar_estado = ''
+        while actual < fin :
+            c = self.entrada[actual]
+            if(c.isalpha() or c.isupper()):
+                self.verificar_estado += c
+            else:
+                return self.verificar_estado
+            actual += 1
+    
+    def verificacion_ex_estado_dos(self,temporal):
+        validar = False
+        if(temporal =='disponible' or temporal == 'cerrada'):
+            validar = True
+            return validar
+        return validar
 #                                   VERIFICACION COLOR
 
     def verificacion_ex_color(self,actual,fin):
@@ -824,27 +842,3 @@ class AnalizadorB():
             longitud += 1
             actual += 1
         return longitud
-
-#                               RECONOCER FILA Y COLUMNA
-    def get_fila(self,actual):
-        x = 0
-        contador_fila = 1
-        while x < actual:
-            c = self.entrada[x]
-            if(c =="\n"):
-                contador_fila += 1
-            x += 1
-        return contador_fila        
-
-    def get_columna(self,actual):
-        x=0
-        contador_columna = 1
-        while x<actual:
-            c = self.entrada[x]
-            contador_columna += 1
-            if(c == '\n'):
-                contador_columna = 1
-            elif (x+1 == actual):
-                return contador_columna
-            x += 1
-                       
