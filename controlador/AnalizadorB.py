@@ -106,7 +106,7 @@ class AnalizadorB():
                                                             print('     <inicio>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'Estacion Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
                                                             self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
                                                             self.valor_expresion = ''
                                                             x = x + size_                                   # Esta en <
@@ -128,7 +128,7 @@ class AnalizadorB():
                                                                             print('     <fin>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'Estacion Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
                                                                             self.fin_ruta = self.verificar_expresion(x+1,x+size_)
                                                                             self.valor_expresion = ''
                                                                             x = x + size_                                   # Esta en <
@@ -236,6 +236,12 @@ class AnalizadorB():
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
                                                                     x = x + size_ 
+
+                                                                    if(self.entrada[x]=='<'):
+                                                                        size_ = self.obtener_longitud_final(x)
+
+                                                                        if(self.buscar_estacion_cierre(x+1,x+size_)==True):
+                                                                            print('     </estacion>')
                                                                 else:
                                                                     x = x + size_
 
@@ -278,6 +284,11 @@ class AnalizadorB():
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)
                                                                     x = x + size_
+
+                                                                    if(self.entrada[x]=='<'):
+                                                                        size_ = self.obtener_longitud_final(x)
+                                                                        if(self.buscar_estacion_cierre(x+1,x+size_)==True):
+                                                                            print('     </estacion>')
 
                                                                 else:
                                                                     x = x + size_
@@ -342,7 +353,12 @@ class AnalizadorB():
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
                                                                     x = x + size_                                           # <
-                                                                        
+
+                                                                    if(self.entrada[x]=='<'):
+                                                                        size_ = self.obtener_longitud_final(x)
+                                                                        if(self.buscar_estacion_cierre(x+1,x+size_)==True):
+                                                                            print('     </estacion>')
+
                                                                 else:
                                                                     x = x + size_
 
@@ -382,6 +398,11 @@ class AnalizadorB():
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)
                                                                     x = x + size_
+
+                                                                    if(self.entrada[x]=='<'):
+                                                                        size_ = self.obtener_longitud_final(x)
+                                                                        if(self.buscar_estacion_cierre(x+1,x+size_)==True):
+                                                                            print('     </estacion>')
 
                                                                 else:
                                                                     x = x + size_
@@ -443,7 +464,10 @@ class AnalizadorB():
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
                                                                     x = x + size_                                           # <
-                                                                                                            
+                                                                    if(self.entrada[x]=='<'):
+                                                                        size_ = self.obtener_longitud_final(x)
+                                                                        if(self.buscar_estacion_cierre(x+1,x+size_)==True):
+                                                                            print('     </estacion>')                                        
                                                                 else:
                                                                     x = x + size_
 
@@ -484,7 +508,10 @@ class AnalizadorB():
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)
                                                                     x = x + size_
-                                                                    
+                                                                    if(self.entrada[x]=='<'):
+                                                                        size_ = self.obtener_longitud_final(x)
+                                                                        if(self.buscar_estacion_cierre(x+1,x+size_)==True):
+                                                                            print('     </estacion>')
 
                                                                 else:
                                                                     x = x + size_

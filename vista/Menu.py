@@ -14,7 +14,7 @@ class Menu():
         while True:
             try:
                 
-                print("Proyecto #1 - LFP\n")  
+                print("\nProyecto #1 - LFP\n")  
                 print("Lenguajes Formales y Programacion A- - JOSE ABRAHAM SOLORZANO HERRERA - 201800937\n")
                 print("1. Cargar Archivo")
                 print("2. Graficar Ruta")
