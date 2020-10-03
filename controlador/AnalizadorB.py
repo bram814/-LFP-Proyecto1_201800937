@@ -7,16 +7,31 @@ class AnalizadorB():
     lista_ruta = list()
     lista_estacion = list()
     lista_analizador = Analizador()
-
+    # atributo <ruta>
+    nombre_ruta = ''
+    peso_ruta = ''
+    inicio_ruta = ''
+    fin_ruta = ''
+    # atributo <estacion>
+    nombre_estacion = ''
+    estado_estacion = ''
+    color_estacion = ''
     
     def __init__(self):
         self.lista_ruta = list()
         self.lista_estacion = list()
         self.lista_analizador = Analizador()
+        self.nombre_ruta = ''
+        self.peso_ruta = ''
+        self.inicio_ruta = ''
+        self.fin_ruta = ''
+        self.nombre_estacion = ''
+        self.estado_estacion = ''
+        self.color_estacion = ''
 
     def metodo_analizador_b(self,texto):
         self.nombre_ruta = ''
-        self.peso_ruta = 0
+        self.peso_ruta = ''
         self.inicio_ruta = ''
         self.fin_ruta = ''
         self.entrada = ''
@@ -25,7 +40,7 @@ class AnalizadorB():
             self.entrada += linea
 
         x = 1
-        print('')
+        print('\n')
         while x < len(self.entrada):
 
             
@@ -36,7 +51,7 @@ class AnalizadorB():
                 
                                    #BUSCANDO <ruta>
                 if (self.buscar_ruta(x+1,size_+x)==True):
-                    print('encontro ruta')                                    
+                    print(' <ruta>')                                    
                     x = x + size_                                                                           # Esta en la posicion >                               
                     size_ = self.obtener_longitud_inicial(x)                                                # Encuentra <  
                     x = x + size_                                                                           # Esta en la posicion <
@@ -45,10 +60,11 @@ class AnalizadorB():
 
                                   #1BUSCANDO <nombre>
                         if(self.buscar_nombre(x+1,x+size_)==True):
-                            print('encontro nombre')
+                            print('     <nombre>')
                             x = x + size_                                                                   # Esta en la posicion >
                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
-                            print(f'Valor Correcto1: {self.verificar_expresion(x+1,x+size_)}')
+                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
                             self.valor_expresion = ''
                             x = x + size_                                                                   # Esta en la posicion <
 
@@ -56,7 +72,7 @@ class AnalizadorB():
                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
                                 if(self.buscar_nombre(x+1,x+size_)==True):
-                                    print('encontro nombre')
+                                    print('     </nombre>')
                                     x = x + size_                                                           # Esta en la posicion >
                                     size_ = self.obtener_longitud_inicial(x)                                # Encuentra <
                                     x = x + size_
@@ -66,10 +82,11 @@ class AnalizadorB():
                                         size_ = self.obtener_longitud_final(x)                              # Encuentra >
 
                                         if (self.buscar_peso(x+1,x+size_)==True):
-                                            print('encontro peso')
+                                            print('     <peso>')
                                             x = x + size_                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
-                                            print(f'Valor Correcto2: {self.verificar_ex_peso(x+1,x+size_)}')
+                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
                                             self.valor_expresion_peso = ''
                                             x = x + size_                                                   # Esta en la posicion <
                                             
@@ -77,7 +94,7 @@ class AnalizadorB():
                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
                                                 
                                                 if(self.buscar_peso(x+1,x+size_)==True):
-                                                    print('encontro peso')
+                                                    print('     </peso>')
                                                     x = x + size_                                           # Esta en la posicion >
                                                     size_ = self.obtener_longitud_inicial(x)                # Encuentra <
                                                     x = x + size_                                           # Esta en <
@@ -86,10 +103,11 @@ class AnalizadorB():
                                                         size_ = self.obtener_longitud_final(x)              # Encuentra >
 
                                                         if (self.buscar_inicio(x+1,x+size_)==True):
-                                                            print('encontro inicio')
+                                                            print('     <inicio>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'Valor Correcto3: {self.verificar_expresion(x+1,x+size_)}')
+                                                            print(f'Estacion Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
                                                             self.valor_expresion = ''
                                                             x = x + size_                                   # Esta en <
 
@@ -97,7 +115,7 @@ class AnalizadorB():
                                                                 size_ = self.obtener_longitud_final(x)      # Encuentra >
 
                                                                 if(self.buscar_inicio(x+1,x+size_)==True):
-                                                                    print('encontro inicio')
+                                                                    print('     </inicio>')
                                                                     x = x + size_                                   # Esta en >
                                                                     size_ = self.obtener_longitud_inicial(x)        # Encuentra <
                                                                     x = x + size_                                   # Esta en <
@@ -107,10 +125,11 @@ class AnalizadorB():
                                                                         size_ = self.obtener_longitud_final(x)      # Encuentra >
 
                                                                         if(self.buscar_fin(x+1,x+size_)==True):
-                                                                            print('encontro fin')
+                                                                            print('     <fin>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'Valor Correcto4: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            print(f'Estacion Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
                                                                             self.valor_expresion = ''
                                                                             x = x + size_                                   # Esta en <
 
@@ -118,7 +137,7 @@ class AnalizadorB():
                                                                                 size_ = self.obtener_longitud_final(x)      # Encuentra >
 
                                                                                 if(self.buscar_fin(x+1,x+size_)==True):
-                                                                                    print('encontro fin')
+                                                                                    print('     </fin>')
                                                                                     x = x + size_                               # Esta >
                                                                                     size_ = self.obtener_longitud_inicial(x)    # Encuentra <
                                                                                     x = x + size_                               # Esta en <
@@ -127,15 +146,13 @@ class AnalizadorB():
                                                                                         size_ = self.obtener_longitud_final(x)     # Encuentra >
                                                                                         
                                                                                         if (self.buscar_ruta_cierre(x+1,x+size_)==True):
-                                                                                            print('encontro /ruta')
-                                                                                        #    x = x + size_                               # Esta en >
-                                                                                         #   size_ = self.obtener_longitud_inicial(x)    # Encuentra <
-                                                                                          #  x = x + size_-1                               # Esta en <
-                                                                                            
+                                                                                            print(' </ruta')
 
-                                                                                        #else:
-                                                                                            
-                                                                                         #   x = x + size_
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
 
                                                                                 else:
                                                                                     x = x + size_
@@ -489,6 +506,33 @@ class AnalizadorB():
             
             #print(f'                REVISANDO: {self.entrada[x]} {self.entrada[x-1]} {self.entrada[x+1]}')
             x += 1
+
+#                                   VERIFICACION COLOR
+
+    def verificacion_ex_color(self,actual,fin):
+        self.verficar_color = ''
+        while actual < fin :
+            c = self.entrada[actual]
+            if(c=='#'):
+                if(self.entrada[actual+1].isalpha() or self.entrada[actual+1].isnumeric() or self.entrada[actual+1].isupper()):
+                    self.verficar_color += c
+                    if(self.verificar_ex_color_dos(actual+1,fin)!=' '):
+                        return self.verficar_color
+            actual += 1
+        return self.verficar_color
+    
+    def verificar_ex_color_dos(self,actual,fin):
+        while actual < fin:
+            c = self.entrada[actual]
+            if(c.isalpha()):
+                self.verficar_color += c
+            elif(c.isnumeric()):
+                self.verficar_color += c
+            elif(c.isupper()):
+                self.verficar_color += c
+            else:
+                break
+            actual += 1
 #                                   VERIFICAR PESO DE RUTA
 
     def verificar_ex_peso(self,actual,fin):
@@ -772,7 +816,6 @@ class AnalizadorB():
 
     def obtener_longitud_inicial(self,actual):
         longitud = 0
-        print(self.entrada[actual])
         while actual < len(self.entrada): 
             #c = self.entrada[actual]
             #print(f"Valor C-: {c}")  
