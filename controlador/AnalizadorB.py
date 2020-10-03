@@ -208,7 +208,8 @@ class AnalizadorB():
                                             print('             <nombre>')
                                             x = x + size_                                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
-                                            print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
+                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.nombre_estacion = self.verificar_expresion(x+1,x+size_)
                                             self.valor_expresion = ''
                                             x = x + size_                                                                   # Esta en la posicion <
 
@@ -272,7 +273,8 @@ class AnalizadorB():
                                                             print('             <nombre>')
                                                             x = x + size_
                                                             size_ = self.obtener_longitud_inicial(x)
-                                                            print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
+                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_estacion = self.verificar_expresion(x+1,x+size_)
                                                             self.valor_expresion = ''
                                                             x = x + size_
 
@@ -307,7 +309,8 @@ class AnalizadorB():
                             print('             <nombre>')
                             x = x + size_                                                                   # Esta >
                             size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
-                            print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
+                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                            self.nombre_estacion = self.verificar_expresion(x+1,x+size_)
                             self.valor_expresion = ''
                             x = x + size_                                                                   # Esta <
 
@@ -439,6 +442,9 @@ class AnalizadorB():
                                             print('             <nombre>')
                                             x = x + size_                                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.nombre_estacion = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
                                             x = x + size_                                                                   # Esta en la posicion <
 
                                             if (self.entrada[x]=='<'):
@@ -497,6 +503,8 @@ class AnalizadorB():
                                                             print('             <nombre>')
                                                             x = x + size_
                                                             size_ = self.obtener_longitud_inicial(x)
+                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_estacion = self.verificar_expresion(x+1,x+size_)
                                                             self.valor_expresion = ''
                                                             x = x + size_
 
