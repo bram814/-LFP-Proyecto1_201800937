@@ -71,7 +71,7 @@ class AnalizadorB():
                             if (self.entrada[x]=='<'):
                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
-                                if(self.buscar_nombre(x+1,x+size_)==True):
+                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
                                     print('     </nombre>')
                                     x = x + size_                                                           # Esta en la posicion >
                                     size_ = self.obtener_longitud_inicial(x)                                # Encuentra <
@@ -93,7 +93,7 @@ class AnalizadorB():
                                             if(self.entrada[x]=='<'):
                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
                                                 
-                                                if(self.buscar_peso(x+1,x+size_)==True):
+                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
                                                     print('     </peso>')
                                                     x = x + size_                                           # Esta en la posicion >
                                                     size_ = self.obtener_longitud_inicial(x)                # Encuentra <
@@ -114,7 +114,7 @@ class AnalizadorB():
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)      # Encuentra >
 
-                                                                if(self.buscar_inicio(x+1,x+size_)==True):
+                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
                                                                     print('     </inicio>')
                                                                     x = x + size_                                   # Esta en >
                                                                     size_ = self.obtener_longitud_inicial(x)        # Encuentra <
@@ -732,7 +732,7 @@ class AnalizadorB():
         while actual < fin :
             c = self.entrada[actual]
             if(c=='/'):
-                valor_fin_cierre = self.buscar_fin_cierre(actual+1,fin)
+                valor_fin_cierre = self.buscar_fin(actual+1,fin)
                 return valor_fin_cierre
             actual += 1
         return valor_fin_cierre
