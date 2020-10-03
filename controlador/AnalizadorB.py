@@ -186,7 +186,7 @@ class AnalizadorB():
                     if (self.entrada[x]=='<'):
                         size_ = self.obtener_longitud_final(x)                                              # Encuentra >
                         if (self.buscar_estado(x+1,x+size_)==True):
-                            print('         <estado>')
+                            print('             <estado>')
                             x = x + size_                                                                   # Esta >
                             # METODO PARA MOSTRAR ESTADO
                             size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
@@ -195,8 +195,8 @@ class AnalizadorB():
                             if (self.entrada[x]=='<'):
                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
-                                if(self.buscar_estado(x+1,x+size_)==True):
-                                    print('estado')
+                                if(self.buscar_estado_cierre(x+1,x+size_)==True):
+                                    print('             </estado>')
                                     x = x + size_                                                            # Esta en >
                                     size_ = self.obtener_longitud_inicial(x)                                 # Encuentra <
                                     x = x + size_                                                            # Esta en <
@@ -205,7 +205,7 @@ class AnalizadorB():
                                         size_ = self.obtener_longitud_final(x)                              # Encuentra >
                                                                                                  
                                         if(self.buscar_nombre(x+1,x+size_)==True):
-                                            print('NOMBRE')
+                                            print('             <nombre>')
                                             x = x + size_                                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
                                             print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
@@ -215,8 +215,8 @@ class AnalizadorB():
                                             if (self.entrada[x]=='<'):
                                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
-                                                if (self.buscar_nombre(x+1,size_+x)==True):
-                                                    print('NOMBRE')
+                                                if (self.buscar_nombre_cierre(x+1,size_+x)==True):
+                                                    print('             </nombre>')
                                                     x = x + size_                                                           # Esta >
                                                     size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
                                                     x = x + size_                                                           # Esta <
@@ -224,15 +224,15 @@ class AnalizadorB():
                                                     if (self.entrada[x]=='<'):
                                                         size_ = self.obtener_longitud_final(x)                              # Encuentra >
                                                         if(self.buscar_color(x+1,x+size_)==True):
-                                                            print('COLOR')
+                                                            print('             <color>')
                                                             x = x + size_                                                   # >
                                                             size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
                                                             # METODO PARA OBTENER EL COLOR          
                                                             x = x + size_                                                   # <
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
-                                                                if(self.buscar_color(x+1,x+size_)==True):
-                                                                    print('COLOR')
+                                                                if(self.buscar_color_cierre(x+1,x+size_)==True):
+                                                                    print('             </color>')
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
                                                                     x = x + size_ 
@@ -244,7 +244,7 @@ class AnalizadorB():
                                                 else:
                                                     x = x + size_
                                         elif(self.buscar_color(x+1,x+size_)==True):
-                                            print('COLOR')
+                                            print('             <color>')
                                             x = x + size_                                   # >
                                             size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
                                             # METODO PARA ALMACENAR COLOR
@@ -253,8 +253,8 @@ class AnalizadorB():
                                             if (self.entrada[x]=='<'):
                                                 size_ = self.obtener_longitud_final(x)      # Encuentra >
 
-                                                if(self.buscar_color(x+1,x+size_)==True):
-                                                    print('COLOR')
+                                                if(self.buscar_color_cierre(x+1,x+size_)==True):
+                                                    print('             </color>')
                                                     x = x + size_                               # >
                                                     size_ = self.obtener_longitud_inicial(x)    # Encuentra <
                                                     x = x + size_                               # <
@@ -263,7 +263,7 @@ class AnalizadorB():
                                                         size_ = self.obtener_longitud_final(x)      # Encuentra >
 
                                                         if (self.buscar_nombre(x+1,x+size_)==True):
-                                                            print('NOMBRE')
+                                                            print('             <nombre>')
                                                             x = x + size_
                                                             size_ = self.obtener_longitud_inicial(x)
                                                             print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
@@ -273,8 +273,8 @@ class AnalizadorB():
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)
 
-                                                                if(self.buscar_nombre(x+1,x+size_)==True):
-                                                                    print('NOMBRE')
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('             </nombre>')
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)
                                                                     x = x + size_
@@ -293,7 +293,7 @@ class AnalizadorB():
                                     x = x + size_
 ##################################################################################3
                         elif (self.buscar_nombre(x+1,x+size_)==True):
-                            print('NOMBRE')
+                            print('             <nombre>')
                             x = x + size_                                                                   # Esta >
                             size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
                             print(f'VALOR 2: {self.verificar_expresion(x+1,x+size_)}')
@@ -303,8 +303,8 @@ class AnalizadorB():
                             if (self.entrada[x]=='<'):
                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
-                                if(self.buscar_nombre(x+1,x+size_)==True):
-                                    print('NOMBRE')
+                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                    print('             </nombre>')
                                     x = x + size_                                                            # Esta en >
                                     size_ = self.obtener_longitud_inicial(x)                                 # Encuentra <
                                     x = x + size_                                                            # Esta en <
@@ -313,7 +313,7 @@ class AnalizadorB():
                                         size_ = self.obtener_longitud_final(x)                              # Encuentra >
                                                                                                  
                                         if(self.buscar_color(x+1,x+size_)==True):
-                                            print('COLOR')
+                                            print('             <color>')
                                             x = x + size_                                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
                                             x = x + size_                                                                   # Esta en la posicion <
@@ -321,8 +321,8 @@ class AnalizadorB():
                                             if (self.entrada[x]=='<'):
                                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
-                                                if (self.buscar_color(x+1,size_+x)==True):
-                                                    print('COLOR')
+                                                if (self.buscar_color_cierre(x+1,size_+x)==True):
+                                                    print('             </color>')
                                                     x = x + size_                                                           # Esta >
                                                     size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
                                                     x = x + size_                                                           # Esta <
@@ -330,15 +330,15 @@ class AnalizadorB():
                                                     if (self.entrada[x]=='<'):
                                                         size_ = self.obtener_longitud_final(x)                              # Encuentra >
                                                         if(self.buscar_estado(x+1,x+size_)==True):
-                                                            print('ESTADO')
+                                                            print('             <estado>')
                                                             x = x + size_                                                   # >
                                                             size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
                                                                       
                                                             x = x + size_                                                   # <
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
-                                                                if(self.buscar_estado(x+1,x+size_)==True):
-                                                                    print('ESTADO')
+                                                                if(self.buscar_estado_cierre(x+1,x+size_)==True):
+                                                                    print('             </estado>')
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
                                                                     x = x + size_                                           # <
@@ -351,7 +351,7 @@ class AnalizadorB():
                                                 else:
                                                     x = x + size_
                                         elif(self.buscar_estado(x+1,x+size_)==True):
-                                            print('ESTADO')
+                                            print('             <estado>')
                                             x = x + size_                                   # >
                                             size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
                                             x = x + size_                                   # <
@@ -359,8 +359,8 @@ class AnalizadorB():
                                             if (self.entrada[x]=='<'):
                                                 size_ = self.obtener_longitud_final(x)      # Encuentra >
 
-                                                if(self.buscar_estado(x+1,x+size_)==True):
-                                                    print('ESTADO')
+                                                if(self.buscar_estado_cierre(x+1,x+size_)==True):
+                                                    print('             </estado>')
                                                     x = x + size_                               # >
                                                     size_ = self.obtener_longitud_inicial(x)    # Encuentra <
                                                     x = x + size_                               # <
@@ -369,7 +369,7 @@ class AnalizadorB():
                                                         size_ = self.obtener_longitud_final(x)      # Encuentra >
 
                                                         if (self.buscar_color(x+1,x+size_)==True):
-                                                            print('COLOR')
+                                                            print('             <color>')
                                                             x = x + size_
                                                             size_ = self.obtener_longitud_inicial(x)
                                                             x = x + size_
@@ -377,8 +377,8 @@ class AnalizadorB():
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)
 
-                                                                if(self.buscar_color(x+1,x+size_)==True):
-                                                                    print('COLOR')
+                                                                if(self.buscar_color_cierre(x+1,x+size_)==True):
+                                                                    print('             </color>')
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)
                                                                     x = x + size_
@@ -397,7 +397,7 @@ class AnalizadorB():
                                     x = x + size_
 #########################################
                         elif (self.buscar_color(x+1,x+size_)==True):
-                            print('COLOR')
+                            print('             <color>')
                             x = x + size_                                                                   # Esta >
                             size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
                             x = x + size_                                                                   # Esta <
@@ -405,8 +405,8 @@ class AnalizadorB():
                             if (self.entrada[x]=='<'):
                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
-                                if(self.buscar_color(x+1,x+size_)==True):
-                                    print('COLOR')
+                                if(self.buscar_color_cierre(x+1,x+size_)==True):
+                                    print('             </color>')
                                     x = x + size_                                                            # Esta en >
                                     size_ = self.obtener_longitud_inicial(x)                                 # Encuentra <
                                     x = x + size_                                                            # Esta en <
@@ -415,7 +415,7 @@ class AnalizadorB():
                                         size_ = self.obtener_longitud_final(x)                              # Encuentra >
                                                                                                  
                                         if(self.buscar_nombre(x+1,x+size_)==True):
-                                            print('NOMBRE')
+                                            print('             <nombre>')
                                             x = x + size_                                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
                                             x = x + size_                                                                   # Esta en la posicion <
@@ -423,8 +423,8 @@ class AnalizadorB():
                                             if (self.entrada[x]=='<'):
                                                 size_ = self.obtener_longitud_final(x)                                      # Encuentra >
 
-                                                if (self.buscar_nombre(x+1,size_+x)==True):
-                                                    print('NOMBRE')
+                                                if (self.buscar_nombre_cierre(x+1,size_+x)==True):
+                                                    print('             </nombre>')
                                                     x = x + size_                                                           # Esta >
                                                     size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
                                                     x = x + size_                                                           # Esta <
@@ -432,14 +432,14 @@ class AnalizadorB():
                                                     if (self.entrada[x]=='<'):
                                                         size_ = self.obtener_longitud_final(x)                              # Encuentra >
                                                         if(self.buscar_estado(x+1,x+size_)==True):
-                                                            print('ESTADO')
+                                                            print('             <estado>')
                                                             x = x + size_                                                   # >
                                                             size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
                                                             x = x + size_                                                   # <
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
-                                                                if(self.buscar_estado(x+1,x+size_)==True):
-                                                                    print('ESTADO')
+                                                                if(self.buscar_estado_cierre(x+1,x+size_)==True):
+                                                                    print('             </estado>')
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
                                                                     x = x + size_                                           # <
@@ -452,7 +452,7 @@ class AnalizadorB():
                                                 else:
                                                     x = x + size_
                                         elif(self.buscar_estado(x+1,x+size_)==True):
-                                            print('ESTADO')
+                                            print('             <estado>')
                                             x = x + size_                                   # >
                                             size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
                                             x = x + size_                                   # <
@@ -460,8 +460,8 @@ class AnalizadorB():
                                             if (self.entrada[x]=='<'):
                                                 size_ = self.obtener_longitud_final(x)      # Encuentra >
 
-                                                if(self.buscar_estado(x+1,x+size_)==True):
-                                                    print('ESTADO')
+                                                if(self.buscar_estado_cierre(x+1,x+size_)==True):
+                                                    print('             </estado>')
                                                     x = x + size_                               # >
                                                     size_ = self.obtener_longitud_inicial(x)    # Encuentra <
                                                     x = x + size_                               # <
@@ -470,7 +470,7 @@ class AnalizadorB():
                                                         size_ = self.obtener_longitud_final(x)      # Encuentra >
 
                                                         if (self.buscar_nombre(x+1,x+size_)==True):
-                                                            print('NOMBRE')
+                                                            print('             <nombre>')
                                                             x = x + size_
                                                             size_ = self.obtener_longitud_inicial(x)
                                                             self.valor_expresion = ''
@@ -479,8 +479,8 @@ class AnalizadorB():
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)
 
-                                                                if(self.buscar_nombre(x+1,x+size_)==True):
-                                                                    print('NOMBRE')
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('             </nombre>')
                                                                     x = x + size_
                                                                     size_ = self.obtener_longitud_inicial(x)
                                                                     x = x + size_
