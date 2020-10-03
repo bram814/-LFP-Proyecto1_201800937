@@ -590,7 +590,7 @@ class AnalizadorB():
             actual += 1 
         
         return valor_ruta
-
+#                                   VERIFICACION </ruta>
     def buscar_ruta_cierre(self,actual,fin):
         valor_ruta_cierre = False
         while actual < fin :
@@ -611,11 +611,21 @@ class AnalizadorB():
                 valor_nombre = True
                 return valor_nombre
 
-
-           
             actual += 1
-
         return valor_nombre
+#                                   VERIFICACION </nombre>
+    def buscar_nombre_cierre(self,actual,fin):
+        valor_nombre_cierre = False
+        while actual < fin :
+            c = self.entrada[actual]
+
+            if (c == '/'):
+                valor_nombre_cierre = self.buscar_nombre(actual+1,fin)
+                return valor_nombre_cierre
+
+            actual += 1
+        return valor_nombre_cierre
+
 #                                   VERIFICAR <peso>
 
     def buscar_peso(self,actual,fin):
@@ -626,6 +636,17 @@ class AnalizadorB():
                 valor_peso = True
                 return valor_peso
             actual += 1
+#                                   VERIFICAR </peso>                            
+    def buscar_peso_cierre(self,actual,fin):
+        valor_peso_cierre = False
+        while actual < fin:
+            c = self.entrada[actual]
+            if(c=='/'):
+                valor_peso_cierre = self.buscar_peso(actual+1,fin)
+                return valor_peso_cierre
+            actual += 1
+        return valor_peso_cierre
+
 #                                   VERIFICAR <inicio>
 
     def buscar_inicio(self,actual,fin):
@@ -640,7 +661,16 @@ class AnalizadorB():
             actual += 1
             
         return valor_inicio
-
+#                                   VERIFICAR </inicio>
+    def buscar_inicio_cierre(self,actual,fin):
+        valor_inicio_cierre = False
+        while actual < fin:
+            c = self.entrada[actual]
+            if (c=='/'):
+                valor_inicio_cierre = self.buscar_inicio(actual+1,fin)
+                return valor_inicio_cierre
+            actual += 1
+        return valor_inicio_cierre
 #                                   VERIFICAR <fin>
 
     def buscar_fin(self,actual,fin):
@@ -652,6 +682,17 @@ class AnalizadorB():
                 return valor_fin
             actual += 1
         return valor_fin
+#                                   VERIFICAR </fin>
+    def buscar_fin_cierre(self,actual,fin):
+        valor_fin_cierre = False
+        while actual < fin :
+            c = self.entrada[actual]
+            if(c=='/'):
+                valor_fin_cierre = self.buscar_fin_cierre(actual+1,fin)
+                return valor_fin_cierre
+            actual += 1
+        return valor_fin_cierre
+
 #                                   VERIFICAR <estacion>
 
     def buscar_estacion(self,actual,fin):
@@ -665,6 +706,16 @@ class AnalizadorB():
                     return valor_estacion
             actual += 1
         return valor_estacion
+#                                   VERIFICACION </estacion>
+    def buscar_estacion_cierre(self,actual,fin):
+        valor_estacion_cierre = False
+        while actual < fin:
+            c = self.entrada[actual]
+            if(c=='/'):
+                valor_estacion_cierre = self.buscar_estacion(actual+1,fin)
+                return valor_estacion_cierre
+            actual += 1
+        return valor_estacion_cierre
 #                                   VERIFICAR <estado>
     def buscar_estado(self,actual,fin):
         valor_estado = False
@@ -676,6 +727,16 @@ class AnalizadorB():
                 return valor_estado
             actual += 1
         return valor_estado
+#                                   VERIFICAR </estado>
+    def buscar_estado_cierre(self,actual,fin):
+        valor_estado_cierre = False
+        while actual < fin :
+            c = self.entrada[actual]
+            if (c=='/'):
+                valor_estado_cierre = self.buscar_estado(actual+1,fin)
+                return valor_estado_cierre
+            actual += 1
+        return valor_estado_cierre
 #                                   VERIFICAR <color>
     def buscar_color(self,actual,fin):
         valor_color = False
@@ -687,6 +748,16 @@ class AnalizadorB():
                 return valor_color
             actual += 1
         return valor_color
+#                                   VERIFICAR </color>
+    def buscar_color_cierre(self,actual,fin):
+        valor_color_cierre = False
+        while actual < fin:
+            c = self.entrada[actual]
+            if(c=='/'):
+                valor_color_cierre = self.buscar_color(actual+1,fin)
+                return valor_color_cierre
+            actual += 1
+        
 #                           obtiene la cantidad entre < >
     def obtener_longitud_final(self,actual):
         longitud = 0
