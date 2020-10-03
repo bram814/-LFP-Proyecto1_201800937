@@ -608,7 +608,7 @@ class AnalizadorB():
                     break
                 
             actual += 1
-#                                   VERIFICAR EXPRESION
+#                                   VERIFICAR IDENTIFICADOR
     def verificar_expresion(self,actual,fin):
         self.valor_expresion = ''
         while actual < fin:
@@ -629,9 +629,9 @@ class AnalizadorB():
     def verificar_expresion_dos(self,actual,fin):
         
         while actual < fin:
-            if (self.entrada[actual].isalpha() or self.entrada[actual]=='_' or self.entrada[actual].isnumeric() or self.entrada[actual].isupper()):
+            if (self.entrada[actual].isalpha() or self.entrada[actual]=='_' or self.entrada[actual].isnumeric() or self.entrada[actual].isupper() or self.entrada[actual]=='@' or self.entrada[actual]=='#'):
                  
-                if(self.entrada[actual-1].isalpha() or self.entrada[actual-1]=='_' or self.entrada[actual-1].isnumeric() or self.entrada[actual].isupper()):
+                if(self.entrada[actual-1].isalpha() or self.entrada[actual-1]=='_' or self.entrada[actual-1].isnumeric() or self.entrada[actual-1].isupper() or self.entrada[actual-1]=='@' or self.entrada[actual-1]=='#'):
                     self.valor_expresion += str(self.entrada[actual])
                       
             else:
