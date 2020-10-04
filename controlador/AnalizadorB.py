@@ -190,6 +190,10 @@ class AnalizadorB():
                             x = x + size_                                                                   # Esta >
                             # METODO PARA MOSTRAR ESTADO
                             size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
+                            if(self.verificacion_ex_estado_dos(self.verificacion_ex_estado(x+1,x+size_))==True):
+                                print(f'Estado: { self.verificacion_ex_estado(x+1,x+size_).lower()}')
+                                self.estado_estacion = self.verificacion_ex_estado(x+1,x+size_).lower()
+                            self.verificar_estado = ''
                             x = x + size_                                                                   # Esta <
 
                             if (self.entrada[x]=='<'):
@@ -228,7 +232,9 @@ class AnalizadorB():
                                                             print('             <color>')
                                                             x = x + size_                                                   # >
                                                             size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
-                                                            # METODO PARA OBTENER EL COLOR          
+                                                            print(f'Color: {self.verificacion_ex_color(x+1,x+size_)}')
+                                                            self.color_estacion = self.verificacion_ex_color(x+1,x+size_)
+                                                            self.verificar_color = ''         
                                                             x = x + size_                                                   # <
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
@@ -243,6 +249,9 @@ class AnalizadorB():
 
                                                                         if(self.buscar_estacion_cierre(x+1,x+size_)==True):
                                                                             print('     </estacion>')
+                                                                            print(f'1. {self.nombre_estacion}')
+                                                                            print(f'2. {self.estado_estacion}')
+                                                                            print(f'3. {self.color_estacion}')
                                                                 else:
                                                                     x = x + size_
 
@@ -254,7 +263,9 @@ class AnalizadorB():
                                             print('             <color>')
                                             x = x + size_                                   # >
                                             size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
-                                            # METODO PARA ALMACENAR COLOR
+                                            print(f'Color: {self.verificacion_ex_color(x+1,x+size_)}')
+                                            self.color_estacion = self.verificacion_ex_color(x+1,x+size_)
+                                            self.verificar_color = ''
                                             x = x + size_                                   # <
 
                                             if (self.entrada[x]=='<'):
@@ -291,6 +302,9 @@ class AnalizadorB():
                                                                         size_ = self.obtener_longitud_final(x)
                                                                         if(self.buscar_estacion_cierre(x+1,x+size_)==True):
                                                                             print('     </estacion>')
+                                                                            print(f'1. {self.nombre_estacion}')
+                                                                            print(f'2. {self.estado_estacion}')
+                                                                            print(f'3. {self.color_estacion}')
 
                                                                 else:
                                                                     x = x + size_
@@ -330,6 +344,9 @@ class AnalizadorB():
                                             print('             <color>')
                                             x = x + size_                                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                                            print(f'Color: {self.verificacion_ex_color(x+1,x+size_)}')
+                                            self.color_estacion = self.verificacion_ex_color(x+1,x+size_)
+                                            self.verificar_color = ''
                                             x = x + size_                                                                   # Esta en la posicion <
 
                                             if (self.entrada[x]=='<'):
@@ -347,7 +364,10 @@ class AnalizadorB():
                                                             print('             <estado>')
                                                             x = x + size_                                                   # >
                                                             size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
-                                                                      
+                                                            if(self.verificacion_ex_estado_dos(self.verificacion_ex_estado(x+1,x+size_))==True):
+                                                                print(f'Estado: { self.verificacion_ex_estado(x+1,x+size_).lower()}')
+                                                                self.estado_estacion = self.verificacion_ex_estado(x+1,x+size_).lower()
+                                                            self.verificar_estado = ''          
                                                             x = x + size_                                                   # <
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
@@ -360,7 +380,10 @@ class AnalizadorB():
                                                                     if(self.entrada[x]=='<'):
                                                                         size_ = self.obtener_longitud_final(x)
                                                                         if(self.buscar_estacion_cierre(x+1,x+size_)==True):
-                                                                            print('     </estacion>')
+                                                                            print('</estacion>')
+                                                                            print(f'1. {self.nombre_estacion}')
+                                                                            print(f'2. {self.estado_estacion}')
+                                                                            print(f'3. {self.color_estacion}')
 
                                                                 else:
                                                                     x = x + size_
@@ -373,6 +396,10 @@ class AnalizadorB():
                                             print('             <estado>')
                                             x = x + size_                                   # >
                                             size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
+                                            if(self.verificacion_ex_estado_dos(self.verificacion_ex_estado(x+1,x+size_))==True):
+                                                print(f'Estado: { self.verificacion_ex_estado(x+1,x+size_).lower()}')
+                                                self.estado_estacion = self.verificacion_ex_estado(x+1,x+size_).lower()
+                                            self.verificar_estado = ''
                                             x = x + size_                                   # <
 
                                             if (self.entrada[x]=='<'):
@@ -391,6 +418,9 @@ class AnalizadorB():
                                                             print('             <color>')
                                                             x = x + size_
                                                             size_ = self.obtener_longitud_inicial(x)
+                                                            print(f'Color: {self.verificacion_ex_color(x+1,x+size_)}')
+                                                            self.color_estacion = self.verificacion_ex_color(x+1,x+size_)
+                                                            self.verificar_color = ''
                                                             x = x + size_
 
                                                             if(self.entrada[x]=='<'):
@@ -405,7 +435,10 @@ class AnalizadorB():
                                                                     if(self.entrada[x]=='<'):
                                                                         size_ = self.obtener_longitud_final(x)
                                                                         if(self.buscar_estacion_cierre(x+1,x+size_)==True):
-                                                                            print('     </estacion>')
+                                                                            print('</estacion>')
+                                                                            print(f'1. {self.nombre_estacion}')
+                                                                            print(f'2. {self.estado_estacion}')
+                                                                            print(f'3. {self.color_estacion}')
 
                                                                 else:
                                                                     x = x + size_
@@ -424,6 +457,9 @@ class AnalizadorB():
                             print('             <color>')
                             x = x + size_                                                                   # Esta >
                             size_ = self.obtener_longitud_inicial(x)                                                # Encunetra <
+                            print(f'Color: {self.verificacion_ex_color(x+1,x+size_)}')
+                            self.color_estacion = self.verificacion_ex_color(x+1,x+size_)
+                            self.verificar_color = ''
                             x = x + size_                                                                   # Esta <
 
                             if (self.entrada[x]=='<'):
@@ -462,6 +498,10 @@ class AnalizadorB():
                                                             print('             <estado>')
                                                             x = x + size_                                                   # >
                                                             size_ = self.obtener_longitud_inicial(x)                                # Encuentra < 
+                                                            if(self.verificacion_ex_estado_dos(self.verificacion_ex_estado(x+1,x+size_))==True):
+                                                                print(f'Estado: { self.verificacion_ex_estado(x+1,x+size_).lower()}')
+                                                                self.estado_estacion = self.verificacion_ex_estado(x+1,x+size_).lower()
+                                                            self.verificar_estado = ''
                                                             x = x + size_                                                   # <
                                                             if(self.entrada[x]=='<'):
                                                                 size_ = self.obtener_longitud_final(x)                      # Encuentra >
@@ -473,7 +513,10 @@ class AnalizadorB():
                                                                     if(self.entrada[x]=='<'):
                                                                         size_ = self.obtener_longitud_final(x)
                                                                         if(self.buscar_estacion_cierre(x+1,x+size_)==True):
-                                                                            print('     </estacion>')                                        
+                                                                            print('</estacion>')
+                                                                            print(f'1. {self.nombre_estacion}')
+                                                                            print(f'2. {self.estado_estacion}')
+                                                                            print(f'3. {self.color_estacion}')                                        
                                                                 else:
                                                                     x = x + size_
 
@@ -485,6 +528,10 @@ class AnalizadorB():
                                             print('             <estado>')
                                             x = x + size_                                   # >
                                             size_ = self.obtener_longitud_inicial(x)        # Ecuentra <
+                                            if(self.verificacion_ex_estado_dos(self.verificacion_ex_estado(x+1,x+size_))==True):
+                                                print(f'Estado: { self.verificacion_ex_estado(x+1,x+size_).lower()}')
+                                                self.estado_estacion = self.verificacion_ex_estado(x+1,x+size_).lower()
+                                            self.verificar_estado = ''
                                             x = x + size_                                   # <
 
                                             if (self.entrada[x]=='<'):
@@ -519,7 +566,11 @@ class AnalizadorB():
                                                                     if(self.entrada[x]=='<'):
                                                                         size_ = self.obtener_longitud_final(x)
                                                                         if(self.buscar_estacion_cierre(x+1,x+size_)==True):
-                                                                            print('     </estacion>')
+                                                                            print('</estacion>')
+                                                                            print(f'1. {self.nombre_estacion}')
+                                                                            print(f'2. {self.estado_estacion}')
+                                                                            print(f'3. {self.color_estacion}')
+                                                                            
 
                                                                 else:
                                                                     x = x + size_
@@ -553,36 +604,37 @@ class AnalizadorB():
             else:
                 return self.verificar_estado
             actual += 1
+        return self.verificar_estado
     
     def verificacion_ex_estado_dos(self,temporal):
         validar = False
-        if(temporal =='disponible' or temporal == 'cerrada'):
+        if(temporal.lower() =='disponible' or temporal.lower() == 'cerrada'):
             validar = True
             return validar
         return validar
 #                                   VERIFICACION COLOR
 
     def verificacion_ex_color(self,actual,fin):
-        self.verficar_color = ''
+        self.verificar_color = ''
         while actual < fin :
             c = self.entrada[actual]
             if(c=='#'):
                 if(self.entrada[actual+1].isalpha() or self.entrada[actual+1].isnumeric() or self.entrada[actual+1].isupper()):
-                    self.verficar_color += c
+                    self.verificar_color += c
                     if(self.verificar_ex_color_dos(actual+1,fin)!=' '):
-                        return self.verficar_color
+                        return self.verificar_color
             actual += 1
-        return self.verficar_color
+        return self.verificar_color
     
     def verificar_ex_color_dos(self,actual,fin):
         while actual < fin:
             c = self.entrada[actual]
             if(c.isalpha()):
-                self.verficar_color += c
+                self.verificar_color += c
             elif(c.isnumeric()):
-                self.verficar_color += c
+                self.verificar_color += c
             elif(c.isupper()):
-                self.verficar_color += c
+                self.verificar_color += c
             else:
                 break
             actual += 1
