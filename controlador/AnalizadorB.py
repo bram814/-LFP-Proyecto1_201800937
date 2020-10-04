@@ -384,6 +384,7 @@ class AnalizadorB():
                                                                             print(f'1. {self.nombre_estacion}')
                                                                             print(f'2. {self.estado_estacion}')
                                                                             print(f'3. {self.color_estacion}')
+                                                                            
 
                                                                 else:
                                                                     x = x + size_
