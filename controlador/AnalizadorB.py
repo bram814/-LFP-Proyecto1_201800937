@@ -146,7 +146,368 @@ class AnalizadorB():
                                                                                         size_ = self.obtener_longitud_final(x)     # Encuentra >
                                                                                         
                                                                                         if (self.buscar_ruta_cierre(x+1,x+size_)==True):
-                                                                                            print(' </ruta')
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_fin(x+1,x+size_)==True):
+                                                            print('     <fin>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                    print('     </fin>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_inicio(x+1,x+size_)==True):
+                                                                            print('     <inicio>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                                    print('     </inicio>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+
+                                        elif (self.buscar_inicio(x+1,x+size_)==True):
+                                            print('     <inicio>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                    print('     </inicio>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_peso(x+1,x+size_)==True):
+                                                            print('     <peso>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                            self.valor_expresion_peso = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                    print('     </peso>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_fin(x+1,x+size_)==True):
+                                                                            print('     <fin>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                                    print('     </fin>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_fin(x+1,x+size_)==True):
+                                                            print('     <fin>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                    print('     </fin>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_peso(x+1,x+size_)==True):
+                                                                            print('     <peso>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                                            self.valor_expresion_peso = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                                    print('     </peso>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+                                        elif (self.buscar_fin(x+1,x+size_)==True):
+                                            print('     <fin>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'fin: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                    print('     </fin>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_peso(x+1,x+size_)==True):
+                                                            print('     <peso>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                            self.valor_expresion_peso = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                    print('     </peso>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_inicio(x+1,x+size_)==True):
+                                                                            print('     <inicio>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                                    print('     </inicio>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_inicio(x+1,x+size_)==True):
+                                                            print('     <inicio>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                    print('     </inicio>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_peso(x+1,x+size_)==True):
+                                                                            print('     <peso>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                                            self.valor_expresion_peso = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                                    print('     </peso>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
 
                                                                                             print(f'1. {self.nombre_ruta}')
                                                                                             print(f'2. {self.peso_ruta}')
@@ -172,9 +533,1438 @@ class AnalizadorB():
                                             x = x + size_
                                 else:
                                     x = x + size_
+                        
+                        
+
+                        elif(self.buscar_peso(x+1,x+size_)==True):
+                            print('     <peso>')
+                            x = x + size_                                                                   # Esta en la posicion >
+                            size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                            self.valor_expresion_peso = ''
+                            x = x + size_                                                                   # Esta en la posicion <
+
+                            if (self.entrada[x]=='<'):
+                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                    print('     </peso>')
+                                    x = x + size_                                                           # Esta en la posicion >
+                                    size_ = self.obtener_longitud_inicial(x)                                # Encuentra <
+                                    x = x + size_
+
+                                    if (self.entrada[x]=='<'):
+
+                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+
+                                        if (self.buscar_nombre(x+1,x+size_)==True):
+                                            print('     <nombre>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                    print('     </nombre>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_inicio(x+1,x+size_)==True):
+                                                            print('     <inicio>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                    print('     </inicio>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_fin(x+1,x+size_)==True):
+                                                                            print('     <fin>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                                    print('     </fin>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_fin(x+1,x+size_)==True):
+                                                            print('     <fin>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                    print('     </fin>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_inicio(x+1,x+size_)==True):
+                                                                            print('     <inicio>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                                    print('     </inicio>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+
+                                        elif (self.buscar_inicio(x+1,x+size_)==True):
+                                            print('     <inicio>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                    print('     </inicio>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_fin(x+1,x+size_)==True):
+                                                            print('     <fin>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                    print('     </fin>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                            print('     <nombre>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                                    print('     </nombre>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('     <nombre>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('     </nombre>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_fin(x+1,x+size_)==True):
+                                                                            print('     <fin>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                                    print('     </fin>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+                                        elif (self.buscar_fin(x+1,x+size_)==True):
+                                            print('     <fin>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'fin: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                    print('     </fin>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('     <nombre>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('     </nombre>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_inicio(x+1,x+size_)==True):
+                                                                            print('     <inicio>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                                    print('     </inicio>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_inicio(x+1,x+size_)==True):
+                                                            print('     <inicio>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                    print('     </inicio>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                            print('     <nombre>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                                    print('     </nombre>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+                                        else:
+                                            x = x + size_
+                                else:
+                                    x = x + size_
+                        
+                        
+                        
+                        elif(self.buscar_inicio(x+1,x+size_)==True):
+                            print('     <inicio>')
+                            x = x + size_                                                                   # Esta en la posicion >
+                            size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                            self.valor_expresion = ''
+                            x = x + size_                                                                   # Esta en la posicion <
+
+                            if (self.entrada[x]=='<'):
+                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                    print('     </inicio>')
+                                    x = x + size_                                                           # Esta en la posicion >
+                                    size_ = self.obtener_longitud_inicial(x)                                # Encuentra <
+                                    x = x + size_
+
+                                    if (self.entrada[x]=='<'):
+
+                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+
+                                        if (self.buscar_peso(x+1,x+size_)==True):
+                                            print('     <peso>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                            self.valor_expresion_peso = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                    print('     </peso>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('     <nombre>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('     </nombre>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_fin(x+1,x+size_)==True):
+                                                                            print('     <fin>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                                    print('     </fin>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_fin(x+1,x+size_)==True):
+                                                            print('     <fin>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                    print('     </fin>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                            print('     <nombre>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                                    print('     </nombre>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+
+                                        elif (self.buscar_nombre(x+1,x+size_)==True):
+                                            print('     <nombre>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                    print('     </nombre>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_fin(x+1,x+size_)==True):
+                                                            print('     <fin>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                    print('     </fin>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_peso(x+1,x+size_)==True):
+                                                                            print('     <peso>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                                            self.valor_expresion_peso = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                                    print('     </peso>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_peso(x+1,x+size_)==True):
+                                                            print('     <peso>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                            self.valor_expresion_peso = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                    print('     </peso>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_fin(x+1,x+size_)==True):
+                                                                            print('     <fin>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Fin: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                                                    print('     </fin>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+                                        elif (self.buscar_fin(x+1,x+size_)==True):
+                                            print('     <fin>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'fin: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                                    print('     </fin>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_peso(x+1,x+size_)==True):
+                                                            print('     <peso>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                            self.valor_expresion_peso = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                    print('     </peso>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                            print('     <nombre>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                                    print('     </nombre>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('     <nombre>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('     </nombre>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_peso(x+1,x+size_)==True):
+                                                                            print('     <peso>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                                            self.valor_expresion_peso = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                                    print('     </peso>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+                                        else:
+                                            x = x + size_
+                                else:
+                                    x = x + size_
+
+
+                        elif(self.buscar_fin(x+1,x+size_)==True):
+                            print('     <fin>')
+                            x = x + size_                                                                   # Esta en la posicion >
+                            size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
+                            print(f'fin: {self.verificar_expresion(x+1,x+size_)}')
+                            self.fin_ruta = self.verificar_expresion(x+1,x+size_)
+                            self.valor_expresion = ''
+                            x = x + size_                                                                   # Esta en la posicion <
+
+                            if (self.entrada[x]=='<'):
+                                size_ = self.obtener_longitud_final(x)                                      # Encuentra >
+
+                                if(self.buscar_fin_cierre(x+1,x+size_)==True):
+                                    print('     </fin>')
+                                    x = x + size_                                                           # Esta en la posicion >
+                                    size_ = self.obtener_longitud_inicial(x)                                # Encuentra <
+                                    x = x + size_
+
+                                    if (self.entrada[x]=='<'):
+
+                                        size_ = self.obtener_longitud_final(x)                              # Encuentra >
+
+                                        if (self.buscar_peso(x+1,x+size_)==True):
+                                            print('     <peso>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                            self.valor_expresion_peso = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                    print('     </peso>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('     <nombre>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('     </nombre>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_inicio(x+1,x+size_)==True):
+                                                                            print('     <inicio>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                                    print('     </inicio>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_inicio(x+1,x+size_)==True):
+                                                            print('     <inicio>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                    print('     </inicio>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                            print('     <nombre>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                                    print('     </nombre>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+
+                                        elif (self.buscar_nombre(x+1,x+size_)==True):
+                                            print('     <nombre>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                    print('     </nombre>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_inicio(x+1,x+size_)==True):
+                                                            print('     <inicio>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                    print('     </inicio>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_peso(x+1,x+size_)==True):
+                                                                            print('     <peso>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                                            self.valor_expresion_peso = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                                    print('     </peso>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_peso(x+1,x+size_)==True):
+                                                            print('     <peso>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                            self.valor_expresion_peso = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                    print('     </peso>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_inicio(x+1,x+size_)==True):
+                                                                            print('     <inicio>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                                                    print('     </inicio>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+                                        elif (self.buscar_inicio(x+1,x+size_)==True):
+                                            print('     <inicio>')
+                                            x = x + size_                                                   # Esta en la posicion >
+                                            size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
+                                            print(f'Inicio: {self.verificar_expresion(x+1,x+size_)}')
+                                            self.inicio_ruta = self.verificar_expresion(x+1,x+size_)
+                                            self.valor_expresion = ''
+                                            x = x + size_                                                   # Esta en la posicion <
+                                            
+                                            if(self.entrada[x]=='<'):
+                                                size_ = self.obtener_longitud_final(x)                      # Encuentra >
+                                                
+                                                if(self.buscar_inicio_cierre(x+1,x+size_)==True):
+                                                    print('     </inicio>')
+                                                    x = x + size_                                           # Esta en la posicion >
+                                                    size_ = self.obtener_longitud_inicial(x)                # Encuentra <
+                                                    x = x + size_                                           # Esta en <
+
+                                                    if (self.entrada[x]=='<'):
+                                                        size_ = self.obtener_longitud_final(x)              # Encuentra >
+
+                                                        if (self.buscar_peso(x+1,x+size_)==True):
+                                                            print('     <peso>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                            self.valor_expresion_peso = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                    print('     </peso>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_nombre(x+1,x+size_)==True):
+                                                                            print('     <nombre>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                                            self.valor_expresion = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                                    print('     </nombre>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        elif (self.buscar_nombre(x+1,x+size_)==True):
+                                                            print('     <nombre>')
+                                                            x = x + size_                                   # Esta en >
+                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                            print(f'nombre: {self.verificar_expresion(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
+                                                            self.valor_expresion = ''
+                                                            x = x + size_                                   # Esta en <
+
+                                                            if(self.entrada[x]=='<'):
+                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                if(self.buscar_nombre_cierre(x+1,x+size_)==True):
+                                                                    print('     </nombre>')
+                                                                    x = x + size_                                   # Esta en >
+                                                                    size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                    x = x + size_                                   # Esta en <
+
+                                                                    if(self.entrada[x]=="<"):
+
+                                                                        size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                        if(self.buscar_peso(x+1,x+size_)==True):
+                                                                            print('     <peso>')
+                                                                            x = x + size_                                   # Esta en >
+                                                                            size_ = self.obtener_longitud_inicial(x)        # Encuentra <
+                                                                            print(f'Peso: {self.verificar_ex_peso(x+1,x+size_)}')
+                                                                            self.peso_ruta = self.verificar_ex_peso(x+1,x+size_)
+                                                                            self.valor_expresion_peso = ''
+                                                                            x = x + size_                                   # Esta en <
+
+                                                                            if(self.entrada[x]=='<'):
+                                                                                size_ = self.obtener_longitud_final(x)      # Encuentra >
+
+                                                                                if(self.buscar_peso_cierre(x+1,x+size_)==True):
+                                                                                    print('     </peso>')
+                                                                                    x = x + size_                               # Esta >
+                                                                                    size_ = self.obtener_longitud_inicial(x)    # Encuentra <
+                                                                                    x = x + size_                               # Esta en <
+                                                                                                        
+                                                                                    if (self.entrada[x]=='<'):
+                                                                                        size_ = self.obtener_longitud_final(x)     # Encuentra >
+                                                                                        
+                                                                                        if (self.buscar_ruta_cierre(x+1,x+size_)==True):
+                                                                                            print(' </ruta>')
+
+                                                                                            print(f'1. {self.nombre_ruta}')
+                                                                                            print(f'2. {self.peso_ruta}')
+                                                                                            print(f'3. {self.inicio_ruta}')
+                                                                                            print(f'4. {self.fin_ruta}\n')
+                                                         
+
+                                                                                else:
+                                                                                    x = x + size_
+
+
+                                                                        else:
+                                                                            x = x + size_
+
+                                                                else:
+                                                                    x = x + size_
+
+                                                        else:
+                                                            x = x + size_       
+                                                else:
+                                                    x = x + size_
+                                        else:
+                                            x = x + size_
+                                else:
+                                    x = x + size_   
                         else:   
                             x = x + size_
-                     
 
 
                                    #BUSCANDO <estacion>
