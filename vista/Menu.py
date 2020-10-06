@@ -39,7 +39,7 @@ class Menu():
                     
                     x = 0
                     while x < len(lista_ruta):
-                        print(lista_ruta[x].getNombre())
+                        print(f'{lista_ruta[x].getNombre()} {lista_ruta[x].getPeso()}')
                         x += 1  
                 elif(numero==3):
                     break

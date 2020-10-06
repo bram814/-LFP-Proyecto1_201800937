@@ -157,8 +157,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
 
                                                                                                
                                                                                 else:
@@ -225,8 +226,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -319,8 +321,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -387,8 +390,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -480,8 +484,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -548,8 +553,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -670,8 +676,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -738,8 +745,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -832,8 +840,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -900,8 +909,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -993,8 +1003,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1061,8 +1072,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1183,8 +1195,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1251,8 +1264,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1345,8 +1359,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1413,8 +1428,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1506,8 +1522,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1574,8 +1591,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1695,8 +1713,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1763,8 +1782,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1857,8 +1877,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1925,8 +1946,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -2018,8 +2040,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -2086,8 +2109,9 @@ class AnalizadorB():
                                                                                                 if(self.peso_ruta!=' '):
                                                                                                     if(self.inicio_ruta!=' '):
                                                                                                         if(self.fin_ruta!=' '):
-                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
-                                                                                                            lista_ruta.append(almacenado)
+                                                                                                            if(1<=float(self.peso_ruta) and float(self.peso_ruta)<=10.0):
+                                                                                                                almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                                lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
