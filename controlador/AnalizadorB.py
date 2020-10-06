@@ -63,9 +63,9 @@ class AnalizadorB():
                             print('     <nombre>')
                             x = x + size_                                                                   # Esta en la posicion >
                             size_ = self.obtener_longitud_inicial(x)                                        # Encuentra <
-                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                            self.valor_expresion = ''
+                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                            self.nombre_indentificador = ''
                             x = x + size_                                                                   # Esta en la posicion <
 
                             if (self.entrada[x]=='<'):
@@ -562,9 +562,9 @@ class AnalizadorB():
                                             print('     <nombre>')
                                             x = x + size_                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
-                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                            self.valor_expresion = ''
+                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                            self.nombre_indentificador = ''
                                             x = x + size_                                                   # Esta en la posicion <
                                             
                                             if(self.entrada[x]=='<'):
@@ -755,9 +755,9 @@ class AnalizadorB():
                                                                             print('     <nombre>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                                            self.valor_expresion = ''
+                                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                                            self.nombre_indentificador = ''
                                                                             x = x + size_                                   # Esta en <
 
                                                                             if(self.entrada[x]=='<'):
@@ -795,9 +795,9 @@ class AnalizadorB():
                                                             print('     <nombre>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                            self.valor_expresion = ''
+                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                            self.nombre_indentificador = ''
                                                             x = x + size_                                   # Esta en <
 
                                                             if(self.entrada[x]=='<'):
@@ -882,9 +882,9 @@ class AnalizadorB():
                                                             print('     <nombre>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                            self.valor_expresion = ''
+                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                            self.nombre_indentificador = ''
                                                             x = x + size_                                   # Esta en <
 
                                                             if(self.entrada[x]=='<'):
@@ -966,9 +966,9 @@ class AnalizadorB():
                                                                             print('     <nombre>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                                            self.valor_expresion = ''
+                                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                                            self.nombre_indentificador = ''
                                                                             x = x + size_                                   # Esta en <
 
                                                                             if(self.entrada[x]=='<'):
@@ -1060,9 +1060,9 @@ class AnalizadorB():
                                                             print('     <nombre>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                            self.valor_expresion = ''
+                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                            self.nombre_indentificador = ''
                                                             x = x + size_                                   # Esta en <
 
                                                             if(self.entrada[x]=='<'):
@@ -1144,9 +1144,9 @@ class AnalizadorB():
                                                                             print('     <nombre>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                                            self.valor_expresion = ''
+                                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                                            self.nombre_indentificador = ''
                                                                             x = x + size_                                   # Esta en <
 
                                                                             if(self.entrada[x]=='<'):
@@ -1189,9 +1189,9 @@ class AnalizadorB():
                                             print('     <nombre>')
                                             x = x + size_                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
-                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                            self.valor_expresion = ''
+                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                            self.nombre_indentificador = ''
                                             x = x + size_                                                   # Esta en la posicion <
                                             
                                             if(self.entrada[x]=='<'):
@@ -1381,9 +1381,9 @@ class AnalizadorB():
                                                                             print('     <nombre>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                                            self.valor_expresion = ''
+                                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                                            self.nombre_indentificador = ''
                                                                             x = x + size_                                   # Esta en <
 
                                                                             if(self.entrada[x]=='<'):
@@ -1421,9 +1421,9 @@ class AnalizadorB():
                                                             print('     <nombre>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                            self.valor_expresion = ''
+                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                            self.nombre_indentificador = ''
                                                             x = x + size_                                   # Esta en <
 
                                                             if(self.entrada[x]=='<'):
@@ -1536,9 +1536,9 @@ class AnalizadorB():
                                                             print('     <nombre>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                            self.valor_expresion = ''
+                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                            self.nombre_indentificador = ''
                                                             x = x + size_                                   # Esta en <
 
                                                             if(self.entrada[x]=='<'):
@@ -1620,9 +1620,9 @@ class AnalizadorB():
                                                                             print('     <nombre>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                                            self.valor_expresion = ''
+                                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                                            self.nombre_indentificador = ''
                                                                             x = x + size_                                   # Esta en <
 
                                                                             if(self.entrada[x]=='<'):
@@ -1665,9 +1665,9 @@ class AnalizadorB():
                                             print('     <nombre>')
                                             x = x + size_                                                   # Esta en la posicion >
                                             size_ = self.obtener_longitud_inicial(x)                        # Encuentra <
-                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                            self.valor_expresion = ''
+                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                            self.nombre_indentificador = ''
                                             x = x + size_                                                   # Esta en la posicion <
                                             
                                             if(self.entrada[x]=='<'):
@@ -1857,9 +1857,9 @@ class AnalizadorB():
                                                                             print('     <nombre>')
                                                                             x = x + size_                                   # Esta en >
                                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                                            print(f'Nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                                            self.valor_expresion = ''
+                                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                                            self.nombre_indentificador = ''
                                                                             x = x + size_                                   # Esta en <
 
                                                                             if(self.entrada[x]=='<'):
@@ -1897,9 +1897,9 @@ class AnalizadorB():
                                                             print('     <nombre>')
                                                             x = x + size_                                   # Esta en >
                                                             size_ = self.obtener_longitud_inicial(x)        # Encuentra <
-                                                            print(f'nombre: {self.verificar_expresion(x+1,x+size_)}')
-                                                            self.nombre_ruta = self.verificar_expresion(x+1,x+size_)
-                                                            self.valor_expresion = ''
+                                                            print(f'Nombre: {self.identificador_nombre(x+1,x+size_)}')
+                                                            self.nombre_ruta = self.identificador_nombre(x+1,x+size_)
+                                                            self.nombre_indentificador = ''
                                                             x = x + size_                                   # Esta en <
 
                                                             if(self.entrada[x]=='<'):
@@ -2508,9 +2508,9 @@ class AnalizadorB():
     def verificar_expresion_dos(self,actual,fin):
         
         while actual < fin:
-            if (self.entrada[actual].isalpha() or self.entrada[actual]=='_' or self.entrada[actual].isnumeric() or self.entrada[actual].isupper() or self.entrada[actual]=='@' or self.entrada[actual]=='#'):
+            if (self.entrada[actual].isalpha() or self.entrada[actual]=='_' or self.entrada[actual].isnumeric() or self.entrada[actual].isupper()):
                  
-                if(self.entrada[actual-1].isalpha() or self.entrada[actual-1]=='_' or self.entrada[actual-1].isnumeric() or self.entrada[actual-1].isupper() or self.entrada[actual-1]=='@' or self.entrada[actual-1]=='#'):
+                if(self.entrada[actual-1].isalpha() or self.entrada[actual-1]=='_' or self.entrada[actual-1].isnumeric() or self.entrada[actual-1].isupper()):
                     self.valor_expresion += str(self.entrada[actual])
                       
             else:
@@ -2518,6 +2518,38 @@ class AnalizadorB():
             
             actual += 1
         return self.valor_expresion
+#                                         IDENTIFICADOR PARA NOMBRE
+    def identificador_nombre(self,actual,fin):
+        self.nombre_indentificador = ''
+        while actual < fin:
+            if(self.entrada[actual].isalpha() or self.entrada[actual].isupper()):
+                if (actual + 1)==fin:
+                    self.nombre_indentificador += self.entrada[actual]
+                    return self.nombre_indentificador
+                else:
+                    self.nombre_indentificador += self.entrada[actual]
+                    
+                    if(self.identificador_nombre_dos(actual+1,fin)!=' '):
+                        return self.nombre_indentificador
+                        
+
+            actual += 1
+        return self.nombre_indentificador
+
+    def identificador_nombre_dos(self,actual,fin):
+        
+        while actual < fin:
+            if (self.entrada[actual].isalpha() or self.entrada[actual]=='_' or self.entrada[actual].isnumeric() or self.entrada[actual].isupper() or self.entrada[actual]=='@' or self.entrada[actual]=='#'):
+                 
+                if(self.entrada[actual-1].isalpha() or self.entrada[actual-1]=='_' or self.entrada[actual-1].isnumeric() or self.entrada[actual-1].isupper() or self.entrada[actual-1]=='@' or self.entrada[actual-1]=='#'):
+                    self.nombre_indentificador += str(self.entrada[actual])
+                      
+            else:
+                break
+            
+            actual += 1
+        return self.nombre_indentificador
+
 #                                   VERIFICAR   <ruta>
     def buscar_ruta(self,actual,fin):
         valor_ruta = False
