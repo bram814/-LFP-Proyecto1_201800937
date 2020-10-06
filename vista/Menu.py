@@ -24,13 +24,26 @@ class Menu():
                 numero = int(input("Ingrese un Numero: "))
 
                 if (numero==1):
-                    self._archivo.open_File()
+                    self._archivo.open_File(lista_ruta,lista_estacion)
 
                     #break
                 elif(numero==2):
-                    break
+                    #print(len(lista_ruta))
+                    #print(len(lista_estacion))
+
+                    print('')
+                    i = 0
+                    while i < len(lista_estacion):
+                        print(lista_estacion[i])
+                        i += 1
+                    
+                    x = 0
+                    while x < len(lista_ruta):
+                        print(lista_ruta[x].getNombre())
+                        x += 1  
                 elif(numero==3):
-                    break   
+                    break
+                                         
                 elif(numero==4):
                     break
                 elif(numero<=0 or numero>=5):

@@ -3,7 +3,7 @@
 class Station():
 
     __nombre = None
-    __estado = True
+    __estado = None
     __color = None
 
 
@@ -11,18 +11,6 @@ class Station():
         self.__nombre = nombre
         self.__estado = estado
         self.__color = color
-
-    def state(self,estado):
-        if(estado=="disponible"):
-            self.__estado = True
-            actual = self.__estado
-            return actual
-
-        elif(estado=="cerrada"):
-            self.__estado = False
-            actual = self.__estado
-            return actual
-
 
     def getNombre(self):
         return self.__nombre
@@ -40,9 +28,5 @@ class Station():
         self.__color = color     
 
     def __str__(self):
-        if (self.__estado):
-            return "Nombre de Estacion: " + self.__nombre + "; Estado: TRUE "  +\
-                "; Color: " + self.__color 
-        else:
-            return "Nombre de Estacion: " + self.__nombre + "; Estado: Falso "  +\
-                "; Color: " + self.__color 
+        return "Nombre de Estacion: " + self.__nombre + "; Estado: " +  self.__estado  +\
+            "; Color: " + self.__color 

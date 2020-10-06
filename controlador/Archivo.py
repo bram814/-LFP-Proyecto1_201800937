@@ -12,14 +12,14 @@ class Archivo():
         self.analizador_ = Analizador()
         self.analizador_html = AnalizadorB()
 
-    def open_File(self):
+    def open_File(self,lista_ruta,lista_estacion):
             try:
                 #root = Tk()
                 ruta =  ""
                 filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("TXT files","*.txt"),("all files","*.*")))
                 ruta = filename
                 if ruta != "":
-                    self.cargar_Archivo(ruta)
+                    self.cargar_Archivo(ruta,lista_ruta,lista_estacion)
                     return ruta
                 else:
                     
@@ -28,7 +28,7 @@ class Archivo():
             except IndexError as e:
                 print(e)   
 
-    def cargar_Archivo(self,ruta):
+    def cargar_Archivo(self,ruta,lista_ruta,lista_estacion):
         print(f"Ruta: {ruta}")
         try:
         
@@ -37,7 +37,7 @@ class Archivo():
             archivo.close()
             print(f"Texto:{texto}")
             self.analizador_.metodo_while(texto)
-            self.analizador_html.metodo_analizador_b(texto)
+            self.analizador_html.metodo_analizador_b(texto,lista_ruta,lista_estacion)
 
             
         except (FileNotFoundError):

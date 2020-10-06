@@ -2,7 +2,7 @@
 class Route():
 
     __nombre = None
-    __peso = 0
+    __peso = None
     __inicio = None
     __fin = None
 
@@ -32,10 +32,9 @@ class Route():
     def setFin(self,fin):
         self.__fin = fin
     
-
     def __str__(self):
-        return "Nombre de Ruta: " +self.__nombre + "; Peso: " + self.__inicio + "; Inicio: " + self.__inicio \
-            + "; Fin: " + self.__fin
+        return "Ruta: " + self.__nombre + ";    Peso: " + self.__peso + ";  Inicio: " + self.__inicio \
+            + ";    Fin: " + self.__fin
 
 
 

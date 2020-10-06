@@ -4,8 +4,8 @@ from controlador.Analizador import Analizador
 
 class AnalizadorB():
     
-    lista_ruta = list()
-    lista_estacion = list()
+    #slista_ruta = list()
+    #lista_estacion = list()
     lista_analizador = Analizador()
     # atributo <ruta>
     nombre_ruta = ''
@@ -18,8 +18,8 @@ class AnalizadorB():
     color_estacion = ''
     
     def __init__(self):
-        self.lista_ruta = list()
-        self.lista_estacion = list()
+        #self.lista_ruta = list()
+        #self.lista_estacion = list()
         self.lista_analizador = Analizador()
         self.nombre_ruta = ''
         self.peso_ruta = ''
@@ -29,7 +29,7 @@ class AnalizadorB():
         self.estado_estacion = ''
         self.color_estacion = ''
 
-    def metodo_analizador_b(self,texto):
+    def metodo_analizador_b(self,texto,lista_ruta,lista_estacion):
         self.nombre_ruta = ''
         self.peso_ruta = ''
         self.inicio_ruta = ''
@@ -152,8 +152,15 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
-                                                         
 
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
+
+                                                                                               
                                                                                 else:
                                                                                     x = x + size_
 
@@ -214,6 +221,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -302,6 +315,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -364,6 +383,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -451,6 +476,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -513,6 +544,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -629,6 +666,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -691,6 +734,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -779,6 +828,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -841,6 +896,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -928,6 +989,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -990,6 +1057,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1106,6 +1179,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1168,6 +1247,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1256,6 +1341,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1318,6 +1409,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1405,6 +1502,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1467,6 +1570,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1582,6 +1691,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1644,6 +1759,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1732,6 +1853,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1794,6 +1921,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1881,6 +2014,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -1943,6 +2082,12 @@ class AnalizadorB():
                                                                                             print(f'2. {self.peso_ruta}')
                                                                                             print(f'3. {self.inicio_ruta}')
                                                                                             print(f'4. {self.fin_ruta}\n')
+                                                                                            if(self.nombre_ruta!=' '):
+                                                                                                if(self.peso_ruta!=' '):
+                                                                                                    if(self.inicio_ruta!=' '):
+                                                                                                        if(self.fin_ruta!=' '):
+                                                                                                            almacenado = Route(self.nombre_ruta,float(self.peso_ruta),self.inicio_ruta,self.fin_ruta)
+                                                                                                            lista_ruta.append(almacenado)
                                                          
 
                                                                                 else:
@@ -2042,6 +2187,11 @@ class AnalizadorB():
                                                                             print(f'1. {self.nombre_estacion}')
                                                                             print(f'2. {self.estado_estacion}')
                                                                             print(f'3. {self.color_estacion}')
+                                                                            if(self.nombre_estacion!=' '):
+                                                                                if(self.estado_estacion!=' '):
+                                                                                    if(self.color_estacion!=' '):
+                                                                                        datos = Station(self.nombre_estacion,self.estado_estacion,self.color_estacion)
+                                                                                        lista_estacion.append(datos)
                                                                 else:
                                                                     x = x + size_
 
@@ -2095,6 +2245,11 @@ class AnalizadorB():
                                                                             print(f'1. {self.nombre_estacion}')
                                                                             print(f'2. {self.estado_estacion}')
                                                                             print(f'3. {self.color_estacion}')
+                                                                            if(self.nombre_estacion!=' '):
+                                                                                if(self.estado_estacion!=' '):
+                                                                                    if(self.color_estacion!=' '):
+                                                                                        datos = Station(self.nombre_estacion,self.estado_estacion,self.color_estacion)
+                                                                                        lista_estacion.append(datos)
 
                                                                 else:
                                                                     x = x + size_
@@ -2174,6 +2329,11 @@ class AnalizadorB():
                                                                             print(f'1. {self.nombre_estacion}')
                                                                             print(f'2. {self.estado_estacion}')
                                                                             print(f'3. {self.color_estacion}')
+                                                                            if(self.nombre_estacion!=' '):
+                                                                                if(self.estado_estacion!=' '):
+                                                                                    if(self.color_estacion!=' '):
+                                                                                        datos = Station(self.nombre_estacion,self.estado_estacion,self.color_estacion)
+                                                                                        lista_estacion.append(datos)
                                                                             
 
 
@@ -2231,6 +2391,11 @@ class AnalizadorB():
                                                                             print(f'1. {self.nombre_estacion}')
                                                                             print(f'2. {self.estado_estacion}')
                                                                             print(f'3. {self.color_estacion}')
+                                                                            if(self.nombre_estacion!=' '):
+                                                                                if(self.estado_estacion!=' '):
+                                                                                    if(self.color_estacion!=' '):
+                                                                                        datos = Station(self.nombre_estacion,self.estado_estacion,self.color_estacion)
+                                                                                        lista_estacion.append(datos)
 
                                                                 else:
                                                                     x = x + size_
@@ -2308,7 +2473,12 @@ class AnalizadorB():
                                                                             print('</estacion>')
                                                                             print(f'1. {self.nombre_estacion}')
                                                                             print(f'2. {self.estado_estacion}')
-                                                                            print(f'3. {self.color_estacion}')                                        
+                                                                            print(f'3. {self.color_estacion}')
+                                                                            if(self.nombre_estacion!=' '):
+                                                                                if(self.estado_estacion!=' '):
+                                                                                    if(self.color_estacion!=' '):
+                                                                                        datos = Station(self.nombre_estacion,self.estado_estacion,self.color_estacion)
+                                                                                        lista_estacion.append(datos)                                        
                                                                 else:
                                                                     x = x + size_
 
@@ -2362,6 +2532,11 @@ class AnalizadorB():
                                                                             print(f'1. {self.nombre_estacion}')
                                                                             print(f'2. {self.estado_estacion}')
                                                                             print(f'3. {self.color_estacion}')
+                                                                            if(self.nombre_estacion!=' '):
+                                                                                if(self.estado_estacion!=' '):
+                                                                                    if(self.color_estacion!=' '):
+                                                                                        datos = Station(self.nombre_estacion,self.estado_estacion,self.color_estacion)
+                                                                                        lista_estacion.append(datos)
                                                                             
 
                                                                 else:
