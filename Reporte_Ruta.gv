@@ -1,0 +1,36 @@
+digraph Reporte_Ruta {
+	rankdir=LR size="8,5"
+	node [shape=circle]
+	"estNorte
+disponible" [fillcolor="#dae8fc" style=filled]
+	"estOeste
+disponible" [fillcolor="#f5f5f5" style=filled]
+	"EST_ESTE
+disponible" [fillcolor="#dae8fc" style=filled]
+	"SUR
+disponible" [fillcolor="#d5e8d4" style=filled]
+	"EST_ESTE
+disponible" -> "estOeste
+disponible" [label="ruta_central1
+2.5"]
+	"estOeste
+disponible" -> "EST_ESTE
+disponible" [label="ruta_central2
+1.5"]
+	"estNorte
+disponible" -> "estOeste
+disponible" [label="rutaNO
+8.0"]
+	"estNorte
+disponible" -> "EST_ESTE
+disponible" [label="RUTA_NE
+5.00001"]
+	"estOeste
+disponible" -> "SUR
+disponible" [label="ruta_OS
+2.4"]
+	"EST_ESTE
+disponible" -> "SUR
+disponible" [label="ruta_ES
+5.0"]
+}
