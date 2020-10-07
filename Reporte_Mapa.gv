@@ -1,0 +1,28 @@
+digraph Reporte_Mapa {
+	rankdir=LR size="8,5"
+	node [shape=circle]
+	"EstacionZona6
+disponible" [fillcolor="#1A5AAF" style=filled]
+	"EstacionZona2
+disponible" [fillcolor="#AF5B1A" style=filled]
+	"EstacionZona1
+disponible" [fillcolor="#E52E22" style=filled]
+	"EstacionZona5
+disponible" [fillcolor="#208E40" style=filled]
+	"EstacionZona6
+disponible" -> "EstacionZona2
+disponible" [label="ruta_central2
+4.0"]
+	"EstacionZona6
+disponible" -> "EstacionZona1
+disponible" [label="ruta2
+5.0"]
+	"EstacionZona1
+disponible" -> "EstacionZona5
+disponible" [label="rutaJardines
+2.0"]
+	"EstacionZona2
+disponible" -> "EstacionZona5
+disponible" [label="ruta_2_5
+3.0"]
+}
