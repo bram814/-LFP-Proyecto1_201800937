@@ -35,11 +35,11 @@ class AnalizadorB():
         self.inicio_ruta = ''
         self.fin_ruta = ''
         self.entrada = ''
-        self.caracter_actual = ''
+        self.caracter_actual = ' '
         for linea in texto:
             self.entrada += linea
 
-        x = 1
+        x = 0
         print('\n')
         while x < len(self.entrada):
 

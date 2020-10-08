@@ -1,5 +1,5 @@
 digraph Reporte_Mapa {
-	rankdir=LR size=9
+	rankdir=LR size="8,5"
 	node [shape=circle]
 	"FUEGO
 disponible" [fillcolor="#fad9d5" style=filled]
@@ -12,7 +12,23 @@ disponible" -> "HIERBA
 disponible" [label="rutaX1
 1.0"]
 	"HIERBA
+disponible" -> "FUEGO
+disponible" [label="rutaX2
+6.0"]
+	"HIERBA
 disponible" -> "AGUA
 disponible" [label="rutaZ2
 6.21"]
+	"AGUA
+disponible" -> "HIERBA
+disponible" [label="rutaZ1
+8.0"]
+	"AGUA
+disponible" -> "FUEGO
+disponible" [label="rutaY2
+2.0"]
+	"FUEGO
+disponible" -> "AGUA
+disponible" [label="rutaY1
+8.0"]
 }
