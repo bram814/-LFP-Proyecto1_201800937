@@ -52,9 +52,10 @@ class Menu():
 
                         print('Ingrese el Nombre de la Estacion Final: ')
                         self.ingreso_estacion_fin = input()
-                        if(self.verificar_estacion(lista_estacion,self.ingreso_estacion_fin)==True):
-                            print('Todas son validas')
-                            #self._reporte.implementacion_ruta(lista_ruta,lista_estacion,self.ingreso_estacion_inicio,self.ingreso_estacion_fin)
+                        if(self.ingreso_estacion_fin != self.ingreso_estacion_inicio):
+                            if(self.verificar_estacion(lista_estacion,self.ingreso_estacion_fin)==True):
+                                #print('Todas son validas')
+                                self._reporte.implementacion_ruta(lista_ruta,lista_estacion,self.ingreso_estacion_inicio,self.ingreso_estacion_fin)
                         else:
                             print('Nombre de Estacion Final Incorrecta o esta Cerrada')
                     else:
